@@ -1,0 +1,21 @@
+.ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  z-index: 20;
+  font-weight: bold;
+}
+
+.resultado {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  color: white;
+  z-index: 30;
+  text-align: center;
+  border-radius: 10px;
+}
