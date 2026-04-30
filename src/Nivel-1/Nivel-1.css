@@ -1,0 +1,51 @@
+.avenida-container {
+  position: relative;
+  width: 100vw;
+  height: 60vh; 
+  background-color: #020817; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 4px solid #00A86B; 
+  border-bottom: 4px solid #00A86B;
+  margin-top: 50px;
+}
+
+.carril-unico {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  background-image: linear-gradient(
+    to right, 
+    transparent 50%, 
+    rgba(255, 255, 255, 0.1) 50%
+  );
+  background-size: 80px 100%;
+}
+
+.meta-inicio, .meta-fin {
+  position: absolute;
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  z-index: 10;
+}
+
+.meta-inicio {
+  left: 0;
+  background: rgba(0, 168, 107, 0.3);
+  color: #00A86B;
+  border-right: 2px solid #00A86B;
+}
+
+.meta-fin {
+  right: 0;
+  background: rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+  border-left: 2px solid #ff4d4d;
+}
