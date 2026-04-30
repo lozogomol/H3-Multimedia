@@ -1,0 +1,218 @@
+/* ════════════════════════════════════════
+   NIVEL 2 — Estilos
+════════════════════════════════════════ */
+
+/* ─── Contenedor principal ─────────────── */
+.avenida-container {
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  background-color: #020817;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 4px solid #00A86B;
+  border-bottom: 4px solid #00A86B;
+  margin-top: 50px;
+}
+
+/* ─── Área del canvas ───────────────────── */
+.carril-unico {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 50%
+  );
+  background-size: 80px 100%;
+}
+
+/* ─── Etiquetas INICIO / META ───────────── */
+.meta-inicio,
+.meta-fin {
+  position: absolute;
+  height: 100%;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.meta-inicio {
+  left: 0;
+  background: rgba(0, 168, 107, 0.15);
+  color: #00A86B;
+  border-right: 2px solid #00A86B;
+}
+
+.meta-fin {
+  right: 0;
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff4d4d;
+  border-left: 2px solid #ff4d4d;
+}
+
+/* ─── HUD ──────────────────────────────── */
+.hud {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background: rgba(2, 8, 23, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 6px 8px;
+  z-index: 20;
+  gap: 0;
+  min-width: 220px;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 20px;
+  gap: 1px;
+}
+
+.hud-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.hud-label {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.hud-val {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+  min-width: 44px;
+  text-align: center;
+}
+
+.hud-sep {
+  width: 1px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+/* ─── Overlay (inicio / victoria) ─────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 8, 23, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  backdrop-filter: blur(6px);
+}
+
+.overlay-card {
+  background: rgba(10, 16, 35, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 36px 44px;
+  text-align: center;
+  max-width: 400px;
+  font-family: Arial, sans-serif;
+}
+
+.overlay-emoji {
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.overlay-title {
+  font-size: 26px;
+  color: #ffffff;
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.overlay-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 6px;
+  line-height: 1.6;
+}
+
+.overlay-btn {
+  margin-top: 24px;
+  padding: 13px 36px;
+  background: #00A86B;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  font-family: Arial, sans-serif;
+  transition: background 0.18s, transform 0.1s;
+}
+
+.overlay-btn:hover  { background: #00bf7a; }
+.overlay-btn:active { transform: scale(0.97); }
+
+/* ─── Resultado final ─────────────────── */
+.result-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 22px 0 0;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px 28px;
+}
+
+.result-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.result-num {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+
+.result-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
