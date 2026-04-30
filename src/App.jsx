@@ -1,17 +1,13 @@
 import React from 'react';
-import Nivel2 from './Nivel-2/Nivel-2'; // 👈 importa el nivel completo
+import Nivel1 from './Nivel-1/Nivel-1'; 
 import './App.css';
 
 function App() {
   return (
-    <main className="game-wrapper">
-      <h1 className="game-title">Nivel 2:</h1>
+    <div className="App">
 
-      <Nivel2 /> {}
-
-      <footer className="game-footer">
-      </footer>
-    </main>
+      <Nivel1 />
+    </div>
   );
 }
 
