@@ -1,0 +1,169 @@
+.home-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, #0d2a1a 0%, #0a0a0f 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Road decoration */
+.road-deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: #111;
+  border-top: 4px solid #00ff87;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1;
+}
+
+.road-stripe {
+  width: 60px;
+  height: 8px;
+  background: #ffd60a;
+  border-radius: 4px;
+  animation: stripeSlide 1.5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes stripeSlide {
+  0% { transform: translateX(0); opacity: 0.8; }
+  50% { opacity: 0.4; }
+  100% { transform: translateX(20px); opacity: 0.8; }
+}
+
+/* Content */
+.home-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 80px;
+}
+
+.game-logo {
+  text-align: center;
+}
+
+.logo-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 20px rgba(0,255,135,0.8));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.logo-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 30px rgba(0,255,135,0.5);
+  line-height: 1;
+}
+
+.logo-accent {
+  color: #00ff87;
+  text-shadow: 0 0 40px #00ff87, 0 0 80px rgba(0,255,135,0.3);
+}
+
+.logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: box-shadow 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff87, #00d4ff);
+  color: #0a0a0f;
+  box-shadow: 0 0 30px rgba(0,255,135,0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 50px rgba(0,255,135,0.7);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 2px solid rgba(0,255,135,0.4);
+  box-shadow: 0 0 15px rgba(0,255,135,0.1);
+}
+
+.btn-secondary:hover {
+  border-color: #00ff87;
+  box-shadow: 0 0 25px rgba(0,255,135,0.3);
+}
+
+/* Stat pills */
+.home-stats-preview {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-pill {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,135,0.2);
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Footer */
+.home-footer {
+  position: absolute;
+  bottom: 130px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  z-index: 2;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1em;
+}

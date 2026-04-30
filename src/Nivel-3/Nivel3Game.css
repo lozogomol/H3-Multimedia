@@ -1,0 +1,207 @@
+.n3-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at 30% 10%, #0d1020 0%, #0a0a0f 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  font-family: 'Orbitron', monospace;
+}
+
+/* ── HUD ───────────────────────────────────────────────────── */
+.n3-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1100px, 96vw);
+}
+
+.n3-back-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+  font-family: 'Orbitron', monospace;
+}
+.n3-back-btn:hover { border-color: #ff4d6d; color: #ff4d6d; }
+
+.n3-hud-center { display: flex; align-items: baseline; gap: 8px; }
+.n3-level-badge { font-size: 0.7rem; color: rgba(255,255,255,0.4); letter-spacing: 0.2em; }
+.n3-level-num {
+  font-size: 2.2rem; font-weight: 900; color: #ff4d6d;
+  text-shadow: 0 0 20px #ff4d6d; line-height: 1;
+}
+.n3-level-tag { font-size: 0.65rem; color: #ff4d6d; letter-spacing: 0.15em; opacity: 0.8; }
+
+.n3-stats { display: flex; gap: 12px; }
+.n3-stat {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 8px 16px; border-radius: 14px; min-width: 68px;
+  border: 1px solid; gap: 2px;
+}
+.n3-stat span { font-size: 0.9rem; }
+.n3-stat strong { font-size: 1.3rem; font-weight: 900; line-height: 1; }
+.n3-stat small {
+  font-size: 0.58rem; letter-spacing: 0.12em; opacity: 0.6;
+  font-family: 'Inter', sans-serif;
+}
+.n3-stat--red  { background: rgba(255,77,109,0.08); border-color: rgba(255,77,109,0.3); color: #ff4d6d; }
+.n3-stat--blue { background: rgba(0,212,255,0.08);  border-color: rgba(0,212,255,0.3);  color: #00d4ff; }
+
+/* ── Game area ─────────────────────────────────────────────── */
+.n3-game-area {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: min(1100px, 96vw);
+}
+
+/* ── Canvas ────────────────────────────────────────────────── */
+.n3-canvas-wrap {
+  position: relative;
+  flex: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px rgba(255,77,109,0.35),
+    0 0 50px rgba(255,77,109,0.1);
+  /* Keep canvas height reasonable */
+  max-height: calc(100vh - 130px);
+  aspect-ratio: 960 / 560;
+}
+
+.n3-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.n3-hit-flash {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle, rgba(255,77,109,0.6) 0%, rgba(255,77,109,0.08) 100%);
+  pointer-events: none;
+}
+
+/* ── Sidebar ───────────────────────────────────────────────── */
+.n3-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.n3-spline-label {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.n3-spline-container {
+  width: 190px;
+  height: 210px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,77,109,0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255,77,109,0.1);
+}
+
+.n3-info-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.n3-info-pill {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.n3-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.n3-legend-row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem; color: rgba(255,255,255,0.5);
+}
+.n3-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+
+.n3-side-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.66rem;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Overlay & Result ──────────────────────────────────────── */
+.n3-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.82);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(8px);
+}
+
+.n3-result-card {
+  background: linear-gradient(160deg, #0f0f20, #1a0a14);
+  border: 1px solid rgba(255,77,109,0.5);
+  border-radius: 28px;
+  padding: 48px 56px;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  text-align: center;
+  box-shadow: 0 0 80px rgba(255,77,109,0.22), inset 0 0 60px rgba(255,77,109,0.04);
+}
+
+.n3-win-stars { font-size: 2.4rem; letter-spacing: 0.15em; filter: drop-shadow(0 0 10px gold); }
+.n3-win-title {
+  font-size: 1.7rem; font-weight: 900; color: #ff4d6d;
+  letter-spacing: 0.08em; text-shadow: 0 0 28px rgba(255,77,109,0.6);
+}
+
+.n3-win-stats { display: flex; gap: 0; align-items: center; }
+.n3-win-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 28px;
+}
+.n3-win-stat span { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+.n3-win-stat strong { font-size: 2rem; color: #fff; }
+.n3-win-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
+
+.n3-win-rating { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.55); }
+
+.n3-win-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.n3-btn-primary, .n3-btn-secondary, .n3-btn-home {
+  padding: 12px 24px; border: none; border-radius: 30px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em;
+  font-family: 'Orbitron', monospace; cursor: pointer;
+}
+.n3-btn-primary {
+  background: linear-gradient(135deg, #ff4d6d, #ff8c42);
+  color: #fff; box-shadow: 0 0 18px rgba(255,77,109,0.4);
+}
+.n3-btn-secondary { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.n3-btn-home    { background: rgba(0,255,135,0.08); color: #00ff87; border: 1px solid rgba(0,255,135,0.3); }

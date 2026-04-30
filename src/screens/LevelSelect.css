@@ -1,0 +1,181 @@
+.level-select-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center top, #110a1a 0%, #0a0a0f 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ls-bg-road {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: repeating-linear-gradient(
+    90deg,
+    #111 0px,
+    #111 60px,
+    #222 60px,
+    #222 62px
+  );
+  border-top: 3px solid rgba(255,214,10,0.4);
+}
+
+.ls-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  padding: 20px;
+}
+
+.ls-back-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+}
+
+.ls-back-btn:hover {
+  border-color: #00ff87;
+  color: #00ff87;
+}
+
+.ls-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.ls-accent {
+  color: #00ff87;
+  text-shadow: 0 0 30px #00ff87;
+}
+
+.ls-desc {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: -18px;
+}
+
+/* Cards */
+.ls-cards {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ls-card {
+  position: relative;
+  width: 240px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-color, #fff);
+  border-radius: 20px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 0 20px var(--card-glow, transparent);
+  text-align: center;
+}
+
+.ls-card:not(.ls-card--locked):hover {
+  box-shadow: 0 0 40px var(--card-glow, transparent);
+}
+
+.ls-card--locked {
+  opacity: 0.5;
+  cursor: default;
+  border-color: rgba(255,255,255,0.15) !important;
+  box-shadow: none !important;
+}
+
+.ls-card-number {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  color: var(--card-color);
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.ls-card-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 12px var(--card-color));
+}
+
+.ls-card-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--card-color);
+  letter-spacing: 0.08em;
+}
+
+.ls-card-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ls-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+.ls-play-btn {
+  margin-top: 10px;
+  padding: 10px 28px;
+  background: var(--card-color);
+  color: #0a0a0f;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: opacity 0.2s;
+}
+
+.ls-play-btn:hover {
+  opacity: 0.85;
+}
+
+.ls-locked-badge {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.05em;
+}
